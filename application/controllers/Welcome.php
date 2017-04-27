@@ -18,9 +18,22 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	public function index($id=0, $name='')
 	{
-		$this->load->view('welcome_message');
+		//控制器对象，超级对象
+		// var_dump($this->load); 
+
+		//CI会自动实例化一个CI_Loader的对象，放在超级对象的属性中
+		//下面的代码帮助大家理解$this->load属性
+		// $obj = new CI_Loader();
+		// $this->load=$obj;
+		// $this->load->view('welcome_message');
+		echo $id;
+		echo $name;
+		// echo $_GET['id'];
+		// echo $this->uri->segment(4);
+		// var_dump($this->uri);
+		// $this->load->view('welcome_message');
 	}
 	public function test()
 	{

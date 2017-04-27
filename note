@@ -40,3 +40,22 @@ CI中的MVC
             <?=$item['name']?>
             <?php endforeach;?>
 
+超级对象
+    当前的控制器对象
+    提供了很多属性：
+    $this->load
+        装载器类的实例system/core/Loader.php
+        装载器类提供方法：
+        view()      装载视图
+        vars()      分配变量到视图
+        database()  装载数据库操作对象
+        model()     装载模型对象
+        helper()    
+    $this->uri
+        是CI_URI的实例system/core/URI.php
+        CI_URI类提供方法：
+        segment(n)用于获取url中的第n个参数
+        传统的：入口文件.php/控制器/动作/参数1/值1/参数2/值2
+        入口文件.php/控制器/动作/值1/值2
+
+
