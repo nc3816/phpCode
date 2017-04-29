@@ -58,4 +58,15 @@ CI中的MVC
         传统的：入口文件.php/控制器/动作/参数1/值1/参数2/值2
         入口文件.php/控制器/动作/值1/值2
 
+    $this->input    
+        是CI_Input类的实例system/core/Input.php
+        CI_Input类提供方法：
+        $this->input->post('username');         //$_POST['username']
+        $this->input->server('DOCUMENT_ROOT');  //$_SERVER['DOCUMENT_ROOT']
+
+在视图中，直接用$this来访问超级对象中的属性
+
+数据库访问
+
+
 

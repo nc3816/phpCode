@@ -68,6 +68,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
+	<?php echo $this->input->server('REMOTE_ADDR');?>
 	<h1> Lamp Brother</h1>
 	<h1>Welcome to CodeIgniter!</h1>
 

@@ -18,7 +18,9 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index($id=0, $name='')
+
+	//welcome/index/5/jack
+	public function index()
 	{
 		//控制器对象，超级对象
 		// var_dump($this->load); 
@@ -28,12 +30,15 @@ class Welcome extends CI_Controller {
 		// $obj = new CI_Loader();
 		// $this->load=$obj;
 		// $this->load->view('welcome_message');
-		echo $id;
-		echo $name;
+		// echo $id;
+		// echo $name;
 		// echo $_GET['id'];
 		// echo $this->uri->segment(4);
 		// var_dump($this->uri);
-		// $this->load->view('welcome_message');
+		$this->load->view('welcome_message');
+		// var_dump($this->input);
+		// var_dump($_SERVER);
+		// echo $this->input->server('REMOTE_ADDR');
 	}
 	public function test()
 	{
