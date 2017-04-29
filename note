@@ -67,6 +67,12 @@ CI中的MVC
 在视图中，直接用$this来访问超级对象中的属性
 
 数据库访问
+    修改配置文件 application\config\database.php
 
+    将数据库访问对象装载到超级对象的属性中 $this->db;
+    $this->load->database();
 
-
+    $res=$this->db->query($sql);返回对象
+    $res->result();//返回数组，数组中是一个一个的对象
+    $res->result_array();//返回数组，里面是关联数组
+    $res->row();//返回首行，第一条

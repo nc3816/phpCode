@@ -6,6 +6,14 @@
             $this->load->database();
             //装载成功后，会放入超级对象的属性中，默认属性名是db
             // var_dump($this->db);
+            $sql='select * from blog_user';
+            $res = $this->db->query($sql);//mysql_query()
+            // var_dump($res);返回值是一个对象
+            $users=$res->result();
+            // echo'<pre>';
+            // var_dump($users);
+            $data['user_listss']=$users;
+            $this->load->view('user/showusers',$data);
         }
 
         public function index() {
