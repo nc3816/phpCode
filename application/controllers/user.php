@@ -9,11 +9,43 @@
             $sql='select * from blog_user';
             $res = $this->db->query($sql);//mysql_query()
             // var_dump($res);返回值是一个对象
-            $users=$res->result();
+            // $users=$res->result();
+            // $users=$res->row();
+            $users=$res->result_array();
+
             // echo'<pre>';
             // var_dump($users);
             $data['user_listss']=$users;
             $this->load->view('user/showusers',$data);
+        }
+
+        public function add() {
+            $this->load->database();
+            $sql = "insert into blog_user (name,password) values ('mark',md5('mark'))";
+            $bool = $this->db->query($sql);
+            if ($bool) {
+                //mysql_affected_rows
+                //
+                echo '受影响行数:'.$this->db->affected_rows();
+                echo '自增ID:'.$this->db->insert_id();
+            }
+        }
+
+        public function test8() {
+            //配置自动加载db
+            // $this->load->database();
+            // $name=$this->input
+            $data[0]='lili';
+            $data[1]='123';
+            // $pass='lili';
+            $sql="insert into blog_user (name,password) values (?,md5(?))";
+            $bool = $this->db->query($sql,$data);
+            if ($bool) {
+                //mysql_affected_rows
+                //
+                echo '受影响行数:'.$this->db->affected_rows();
+                echo '自增ID:'.$this->db->insert_id();
+            }
         }
 
         public function index() {

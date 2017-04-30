@@ -6,6 +6,7 @@
 </head>
 <body>
     <?php
+        echo "<pre>";
         var_dump($user_listss);
     ?>
 </body>

@@ -75,4 +75,21 @@ CI中的MVC
     $res=$this->db->query($sql);返回对象
     $res->result();//返回数组，数组中是一个一个的对象
     $res->result_array();//返回数组，里面是关联数组
-    $res->row();//返回首行，第一条
+    $res->row();//返回首行，第一条数据，直接是一个对象
+
+    参数绑定
+    $sql="select * from blog_user where name=?";
+    $this->db->query($sql,$name);//如果有多个问题时，需要传入一个索引数
+
+    表前缀
+    $db['default']['dbprefix'] = 'blog_';
+    $db['default']['swap_pre'] = 'blog_';
+    配置为一样，代码中，直接硬编码表前缀就行了，如果以后项目数据库表前缀发生变化，
+    只要需要修改    $db['default']['dbprefix'] = 'new_';
+    代码中的blog_会自动替换为new_
+
+    db的自动加载
+        application\config\autoload.php
+        $autoload['libraries'] = array('database');
+        不需要，$this->load->database();
+
